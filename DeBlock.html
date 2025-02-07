@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Loader</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #000;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        #controls {
+            margin-bottom: 10px;
+        }
+        iframe {
+            width: 100vw;
+            height: 80vh;
+            border: none;
+        }
+        input, button {
+            padding: 8px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div id="controls">
+        <input type="text" id="urlInput" placeholder="Enter URL" value="https://web.parsec.app">
+        <button onclick="loadURL()">Load</button>
+    </div>
+    <iframe id="webFrame" src="https://web.parsec.app" allowfullscreen></iframe>
+    <script>
+        function loadURL() {
+            const url = document.getElementById('urlInput').value;
+            document.getElementById('webFrame').src = url;
+        }
+    </script>
+</body>
+</html>
